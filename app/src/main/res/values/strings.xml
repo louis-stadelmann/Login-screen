@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LoginScreen</string>
+    <string name="login_btn">LOG IN</string>
+    <string name="signup_btn">SIGN UP</string>
+    <string name="welcome_back">WELCOME BACK</string>
+    <string name="welcome">WELCOME</string>
+    <string name="enter_pseudo">Enter your pseudo</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="wrong_login">Your pseudo or password is wrong</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_arrow">Back arrow</string>
+    <string name="or">------- OR -------</string>
+</resources>
