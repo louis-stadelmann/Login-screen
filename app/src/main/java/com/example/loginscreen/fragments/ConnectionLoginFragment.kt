@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Build
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,16 +48,19 @@ class ConnectionLoginFragment : Fragment() {
             tvPseudo.text = it.toString()
         }
 
+        connectionVW.token.observe(viewLifecycleOwner) {
+            if (TextUtils.isEmpty(it) && !TextUtils.equals(it, "null")) {
+                tvWrongLogin.visibility = View.VISIBLE
+            }
+        }
+
         frameLayout.visibility = View.GONE
 
         loginBtn.setOnClickListener {
             if (frameLayout.visibility == View.GONE) {
                 show(frameLayout)
             } else {
-                val result = connectionVW.sendData()
-                if (!result) {
-                    tvWrongLogin.visibility = View.VISIBLE
-                }
+                //TODO implement call to login
             }
         }
 

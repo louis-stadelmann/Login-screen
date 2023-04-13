@@ -7,9 +7,10 @@ import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
-class ConnectionViewModel() : ViewModel() {
+class ConnectionViewModel : ViewModel() {
     val username = MutableLiveData("")
     private val password = MutableLiveData("")
+    var token = MutableLiveData("null")
 
     fun setUsername(data: String) {
         if (!TextUtils.isEmpty(data) && !TextUtils.equals(data, username.toString())) {
@@ -21,10 +22,6 @@ class ConnectionViewModel() : ViewModel() {
         if (!TextUtils.isEmpty(data) && !TextUtils.equals(data, password.toString())) {
             password.value = hashPassword(data)
         }
-    }
-
-    fun sendData(): Boolean {
-        return false
     }
 
     private fun hashPassword(rawPassword: String): String {
